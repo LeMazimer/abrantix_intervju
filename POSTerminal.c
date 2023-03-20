@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <curl/curl.h>
 
 #define NAME_LEN 50
 
@@ -28,6 +29,10 @@ Product findProductByID(Product* products, int listSize, long targetId) {
     // Return a default value if the struct is not found
     Product result = {-1, "", 0.0, 0};
     return result;
+}
+
+void sendPostRequest(char* url) {
+    return;
 }
 
 int main() {
@@ -147,6 +152,7 @@ int main() {
                     }
                     printf("Total amount due: %.2f\n", total);
                     order.total = total;
+                    // 
                     break;
                 default:
                     printf("Invalid choice. Please try again.\n");
